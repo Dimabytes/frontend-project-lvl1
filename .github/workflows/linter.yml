@@ -11,5 +11,7 @@ jobs:
     name: Lint code base
     steps:
       - uses: actions/checkout@v2
+      - name: install modules
+        run: make install
       - name: Run ESLint
         run: make lint

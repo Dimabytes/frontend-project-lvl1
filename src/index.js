@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import even from './games/even.js';
 import calc from './games/calc.js';
 import gcd from './games/gcd.js';
+import progression from './games/progression.js';
 
 const maxCorrectAnswersCount = 3;
 
@@ -44,3 +45,5 @@ export const evenGame = createGame(even, 'Answer "yes" if the number is even, ot
 export const calcGame = createGame(calc, 'What is the result of the expression?');
 
 export const gcdGame = createGame(gcd, 'Find the greatest common divisor of given numbers.');
+
+export const progressionGame = createGame(progression, 'What number is missing in the progression?');

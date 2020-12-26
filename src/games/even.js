@@ -1,7 +1,4 @@
-import getRandomInt from '../getRandomInt.js';
-
-const minRandomNumber = 0;
-const maxRandomNumber = 100;
+import getRandomInt, { gameRandomMax, gameRandomMin } from '../getRandomInt.js';
 
 const getCorrectAnswer = (number) => {
   if (number % 2 === 0) {
@@ -11,7 +8,7 @@ const getCorrectAnswer = (number) => {
 };
 
 export default function even(checkAnswer) {
-  const randomNumber = getRandomInt(minRandomNumber, maxRandomNumber);
+  const randomNumber = getRandomInt(gameRandomMin, gameRandomMax);
 
   checkAnswer(randomNumber, getCorrectAnswer(randomNumber));
 }

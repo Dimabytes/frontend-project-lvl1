@@ -1,3 +1,4 @@
+import createGame from '../index.js';
 import getRandomInt from '../getRandomInt.js';
 
 const minProgressionLength = 5;
@@ -9,7 +10,7 @@ const maxStep = 10;
 const minFirstElement = 1;
 const maxFirstElement = 20;
 
-export default function progression(checkAnswer) {
+function game(checkAnswer) {
   const step = getRandomInt(minStep, maxStep);
   const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
@@ -22,3 +23,5 @@ export default function progression(checkAnswer) {
 
   checkAnswer(array.join(' '), missedElement);
 }
+
+export default createGame(game, 'What number is missing in the progression?');

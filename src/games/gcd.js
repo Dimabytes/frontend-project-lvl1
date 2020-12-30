@@ -1,16 +1,19 @@
+import createGame from '../index.js';
 import getRandomInt, { gameRandomMax, gameRandomMin } from '../getRandomInt.js';
 
-const getCorrectAnswer = (a, b) => {
+const getGcd = (a, b) => {
   if (!b) {
     return a;
   }
 
-  return getCorrectAnswer(b, a % b);
+  return getGcd(b, a % b);
 };
 
-export default function gcd(checkAnswer) {
+function game(checkAnswer) {
   const a = getRandomInt(gameRandomMin, gameRandomMax);
   const b = getRandomInt(gameRandomMin, gameRandomMax);
 
-  checkAnswer(`${a} ${b}`, getCorrectAnswer(a, b));
+  checkAnswer(`${a} ${b}`, getGcd(a, b));
 }
+
+export default createGame(game, 'Find the greatest common divisor of given numbers.');

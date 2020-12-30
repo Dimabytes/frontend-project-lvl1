@@ -1,9 +1,4 @@
 import readlineSync from 'readline-sync';
-import even from './games/even.js';
-import calc from './games/calc.js';
-import gcd from './games/gcd.js';
-import progression from './games/progression.js';
-import prime from './games/prime.js';
 
 const maxCorrectAnswersCount = 3;
 
@@ -41,12 +36,4 @@ const createGame = (game, rules) => () => {
   }
 };
 
-export const evenGame = createGame(even, 'Answer "yes" if the number is even, otherwise answer "no".');
-
-export const calcGame = createGame(calc, 'What is the result of the expression?');
-
-export const gcdGame = createGame(gcd, 'Find the greatest common divisor of given numbers.');
-
-export const progressionGame = createGame(progression, 'What number is missing in the progression?');
-
-export const primeGame = createGame(prime, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+export default createGame;

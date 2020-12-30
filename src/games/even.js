@@ -1,14 +1,12 @@
+import createGame from '../index.js';
 import getRandomInt, { gameRandomMax, gameRandomMin } from '../getRandomInt.js';
 
-const getCorrectAnswer = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+const isEven = (number) => number % 2 === 0;
 
-export default function even(checkAnswer) {
+function game(checkAnswer) {
   const randomNumber = getRandomInt(gameRandomMin, gameRandomMax);
 
-  checkAnswer(randomNumber, getCorrectAnswer(randomNumber));
+  checkAnswer(randomNumber, isEven(randomNumber) ? 'yes' : 'no');
 }
+
+export default createGame(game, 'Answer "yes" if the number is even, otherwise answer "no".');

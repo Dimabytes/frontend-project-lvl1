@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Dimabytes/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Dimabytes/frontend-project-lvl1/actions)
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2ff2f87d0c1e0fbe8a52/maintainability)](https://codeclimate.com/github/Dimabytes/frontend-project-lvl1/maintainability)
 [![linter](https://github.com/Dimabytes/frontend-project-lvl1/workflows/linter/badge.svg)](https://github.com/Dimabytes/frontend-project-lvl1/actions)
 
 

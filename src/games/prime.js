@@ -1,3 +1,4 @@
+import createGame from '../index.js';
 import getRandomInt, { gameRandomMin, gameRandomMax } from '../getRandomInt.js';
 
 const isPrime = (number) => {
@@ -19,8 +20,10 @@ const getCorrectAnswer = (number) => {
   return 'no';
 };
 
-export default function prime(checkAnswer) {
+function game(checkAnswer) {
   const randomNumber = getRandomInt(gameRandomMin, gameRandomMax);
 
   checkAnswer(randomNumber, getCorrectAnswer(randomNumber));
 }
+
+export default createGame(game, 'Answer "yes" if given number is prime. Otherwise answer "no".');

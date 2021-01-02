@@ -3,7 +3,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/2ff2f87d0c1e0fbe8a52/maintainability)](https://codeclimate.com/github/Dimabytes/frontend-project-lvl1/maintainability)
 [![linter](https://github.com/Dimabytes/frontend-project-lvl1/workflows/linter/badge.svg)](https://github.com/Dimabytes/frontend-project-lvl1/actions)
 
-##Brain games
+## Brain games
 
 «Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. Игры:
 

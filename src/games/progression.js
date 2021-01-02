@@ -10,18 +10,23 @@ const maxStep = 10;
 const minFirstElement = 1;
 const maxFirstElement = 20;
 
-function game(checkAnswer) {
+function game() {
   const step = getRandomInt(minStep, maxStep);
   const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
-  const array = new Array(progressionLength)
+  const progression = new Array(progressionLength)
     .fill(0)
     .map((el, index) => firstElement + index * step);
   const missedElementIndex = getRandomInt(0, progressionLength);
-  const missedElement = array[missedElementIndex];
-  array[missedElementIndex] = '..';
+  const correctAnswer = progression[missedElementIndex];
+  progression[missedElementIndex] = '..';
 
-  checkAnswer(array.join(' '), missedElement);
+  return {
+    question: progression.join(' '),
+    correctAnswer,
+  };
 }
 
-export default createGame(game, 'What number is missing in the progression?');
+const rule = 'What number is missing in the progression?';
+
+export default createGame(game, rule);

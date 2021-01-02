@@ -13,17 +13,15 @@ const isPrime = (number) => {
   return true;
 };
 
-const getCorrectAnswer = (number) => {
-  if (isPrime(number)) {
-    return 'yes';
-  }
-  return 'no';
-};
+function game() {
+  const question = getRandomInt(gameRandomMin, gameRandomMax);
 
-function game(checkAnswer) {
-  const randomNumber = getRandomInt(gameRandomMin, gameRandomMax);
-
-  checkAnswer(randomNumber, getCorrectAnswer(randomNumber));
+  return {
+    question,
+    correctAnswer: isPrime(question) ? 'yes' : 'no',
+  };
 }
 
-export default createGame(game, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+export default createGame(game, rule);

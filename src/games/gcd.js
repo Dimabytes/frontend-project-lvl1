@@ -9,11 +9,15 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-function game(checkAnswer) {
+function game() {
   const a = getRandomInt(gameRandomMin, gameRandomMax);
   const b = getRandomInt(gameRandomMin, gameRandomMax);
-
-  checkAnswer(`${a} ${b}`, getGcd(a, b));
+  return {
+    question: `${a} ${b}`,
+    correctAnswer: getGcd(a, b),
+  };
 }
 
-export default createGame(game, 'Find the greatest common divisor of given numbers.');
+const rule = 'Find the greatest common divisor of given numbers.';
+
+export default createGame(game, rule);

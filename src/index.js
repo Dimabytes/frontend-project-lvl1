@@ -2,11 +2,17 @@ import readlineSync from 'readline-sync';
 
 const maxCorrectAnswersCount = 3;
 
-const createGame = (game, rules) => () => {
+const createGame = (game, rule) => () => {
   let correctAnswersCount = 0;
-  let isMistake = false;
 
-  function checkAnswer(question, correctAnswer) {
+  console.log('Welcome to the Brain Games!');
+  const playerName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${playerName}`);
+  console.log(rule);
+
+  while (correctAnswersCount < maxCorrectAnswersCount) {
+    const { question, correctAnswer } = game();
+
     console.log(`Question: ${question}`);
 
     const playerAnswer = readlineSync.question('Your answer: ');
@@ -14,25 +20,14 @@ const createGame = (game, rules) => () => {
     if (correctAnswer.toString() === playerAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
+      if (correctAnswersCount === maxCorrectAnswersCount) {
+        console.log(`Congratulations, ${playerName}!`);
+      }
     } else {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-      isMistake = true;
+      console.log(`Let's try again, ${playerName}!`);
+      break;
     }
-  }
-
-  console.log('Welcome to the Brain Games!');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}`);
-  console.log(rules);
-
-  while (correctAnswersCount < maxCorrectAnswersCount && !isMistake) {
-    game(checkAnswer);
-  }
-
-  if (isMistake) {
-    console.log(`Let's try again, ${playerName}!`);
-  } else {
-    console.log(`Congratulations, ${playerName}!`);
   }
 };
 

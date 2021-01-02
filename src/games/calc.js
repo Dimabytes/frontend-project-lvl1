@@ -4,24 +4,28 @@ import getRandomInt, { gameRandomMax, gameRandomMin } from '../getRandomInt.js';
 const operators = ['*', '-', '+'];
 
 const getCorrectAnswer = (number1, number2, operator) => {
-  if (operator === '*') {
-    return number1 * number2;
+  switch (operator) {
+    case '*':
+      return number1 * number2;
+    case '-':
+      return number1 - number2;
+    case '+':
+      return number1 + number2;
+    default:
+      return null;
   }
-  if (operator === '-') {
-    return number1 - number2;
-  }
-  if (operator === '+') {
-    return number1 + number2;
-  }
-  return null;
 };
 
-function game(checkAnswer) {
+function game() {
   const number1 = getRandomInt(gameRandomMin, gameRandomMax);
   const number2 = getRandomInt(gameRandomMin, gameRandomMax);
   const operator = operators[getRandomInt(0, operators.length)];
-
-  checkAnswer(`${number1} ${operator} ${number2}`, getCorrectAnswer(number1, number2, operator));
+  return {
+    question: `${number1} ${operator} ${number2}`,
+    correctAnswer: getCorrectAnswer(number1, number2, operator),
+  };
 }
 
-export default createGame(game, 'What is the result of the expression?');
+const rule = 'What is the result of the expression?';
+
+export default createGame(game, rule);

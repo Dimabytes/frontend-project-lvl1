@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const correctAnswersCountToWin = 3;
+const roundsCount = 3;
 
 const createGame = (game, rule) => () => {
   let correctAnswersCount = 0;
@@ -10,7 +10,7 @@ const createGame = (game, rule) => () => {
   console.log(`Hello, ${playerName}`);
   console.log(rule);
 
-  while (correctAnswersCount < correctAnswersCountToWin) {
+  while (correctAnswersCount < roundsCount) {
     const { question, correctAnswer } = game();
 
     console.log(`Question: ${question}`);
@@ -20,7 +20,7 @@ const createGame = (game, rule) => () => {
     if (correctAnswer.toString() === playerAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
-      if (correctAnswersCount === correctAnswersCountToWin) {
+      if (correctAnswersCount === roundsCount) {
         console.log(`Congratulations, ${playerName}!`);
       }
     } else {

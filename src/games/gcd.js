@@ -9,7 +9,7 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-function play() {
+function getRound() {
   const a = getRandomInt(gameRandomMin, gameRandomMax);
   const b = getRandomInt(gameRandomMin, gameRandomMax);
   return {
@@ -20,4 +20,4 @@ function play() {
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-export default createGame(play, rule);
+export default createGame(getRound, rule);

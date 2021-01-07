@@ -3,7 +3,7 @@ import getRandomInt, { gameRandomMax, gameRandomMin } from '../getRandomInt.js';
 
 const isEven = (number) => number % 2 === 0;
 
-function play() {
+function getRound() {
   const question = getRandomInt(gameRandomMin, gameRandomMax);
 
   return {
@@ -14,4 +14,4 @@ function play() {
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export default createGame(play, rule);
+export default createGame(getRound, rule);

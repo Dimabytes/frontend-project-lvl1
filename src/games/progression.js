@@ -10,7 +10,7 @@ const maxStep = 10;
 const minFirstElement = 1;
 const maxFirstElement = 20;
 
-function play() {
+function getRound() {
   const step = getRandomInt(minStep, maxStep);
   const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
@@ -29,4 +29,4 @@ function play() {
 
 const rule = 'What number is missing in the progression?';
 
-export default createGame(play, rule);
+export default createGame(getRound, rule);

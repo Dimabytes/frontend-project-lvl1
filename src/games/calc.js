@@ -16,7 +16,7 @@ const getCorrectAnswer = (number1, number2, operator) => {
   }
 };
 
-function play() {
+function getRound() {
   const number1 = getRandomInt(gameRandomMin, gameRandomMax);
   const number2 = getRandomInt(gameRandomMin, gameRandomMax);
   const operator = operators[getRandomInt(0, operators.length)];
@@ -28,4 +28,4 @@ function play() {
 
 const rule = 'What is the result of the expression?';
 
-export default createGame(play, rule);
+export default createGame(getRound, rule);

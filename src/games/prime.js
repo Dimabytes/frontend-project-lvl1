@@ -13,7 +13,7 @@ const isPrime = (number) => {
   return true;
 };
 
-function play() {
+function getRound() {
   const question = getRandomInt(gameRandomMin, gameRandomMax);
 
   return {
@@ -24,4 +24,4 @@ function play() {
 
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-export default createGame(play, rule);
+export default createGame(getRound, rule);

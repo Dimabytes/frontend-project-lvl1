@@ -10,7 +10,7 @@ const maxStep = 10;
 const minFirstElement = 1;
 const maxFirstElement = 20;
 
-function game() {
+function play() {
   const step = getRandomInt(minStep, maxStep);
   const progressionLength = getRandomInt(minProgressionLength, maxProgressionLength);
   const firstElement = getRandomInt(minFirstElement, maxFirstElement);
@@ -18,7 +18,7 @@ function game() {
     .fill(0)
     .map((el, index) => firstElement + index * step);
   const missedElementIndex = getRandomInt(0, progressionLength);
-  const correctAnswer = progression[missedElementIndex];
+  const correctAnswer = progression[missedElementIndex].toString();
   progression[missedElementIndex] = '..';
 
   return {
@@ -29,4 +29,4 @@ function game() {
 
 const rule = 'What number is missing in the progression?';
 
-export default createGame(game, rule);
+export default createGame(play, rule);

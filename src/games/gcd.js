@@ -9,15 +9,15 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-function game() {
+function play() {
   const a = getRandomInt(gameRandomMin, gameRandomMax);
   const b = getRandomInt(gameRandomMin, gameRandomMax);
   return {
     question: `${a} ${b}`,
-    correctAnswer: getGcd(a, b),
+    correctAnswer: getGcd(a, b).toString(),
   };
 }
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-export default createGame(game, rule);
+export default createGame(play, rule);

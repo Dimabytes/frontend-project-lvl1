@@ -17,17 +17,15 @@ const createGame = (game, rule) => () => {
 
     const playerAnswer = readlineSync.question('Your answer: ');
 
-    if (correctAnswer.toString() === playerAnswer) {
+    if (correctAnswer === playerAnswer) {
       console.log('Correct!');
       correctAnswersCount += 1;
-      if (correctAnswersCount === roundsCount) {
-        console.log(`Congratulations, ${playerName}!`);
-      }
     } else {
       console.log(`"${playerAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
       console.log(`Let's try again, ${playerName}!`);
-      break;
+      return;
     }
+    console.log(`Congratulations, ${playerName}!`);
   }
 };
 
